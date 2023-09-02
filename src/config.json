@@ -1,0 +1,15 @@
+{
+    "title": "Dev's blog",
+    "description": "Dev's blog",
+    "links": [
+        {
+            "name": "GitHub",
+            "link": "https://github.com/squishycygnus"
+        },
+        {
+            "name": "ZeroLimits.dev",
+            "link": "https://zerolimits.dev"
+        }
+    ],
+    "site": "https://noclaps.github.io"
+}

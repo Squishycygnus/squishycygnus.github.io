@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/post.scss";
+
+interface Props {
+    title: string;
+    description: string;
+    date: Date;
+}
+const { title, description, date } = Astro.props;
+---
+
+<BaseLayout {title} {description}>
+    <div>
+        <h1>{title}</h1>
+        <hr />
+        <time datetime={date.toISOString()}>{date.toDateString()}</time>
+    </div>
+    <slot />
+</BaseLayout>
+
+<style>
+    div {
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    h1 {
+        margin: 0;
+    }
+</style>

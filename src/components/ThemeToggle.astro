@@ -1,0 +1,73 @@
+<theme-toggle title="Theme toggle"></theme-toggle>
+
+<style lang="scss">
+    theme-toggle {
+        background-color: var(--bright-text);
+        height: 1.5rem;
+        width: 2.75rem;
+        border-radius: 2rem;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            height: 1rem;
+            width: 1rem;
+            border-radius: 2rem;
+            background-color: var(--bg);
+            position: absolute;
+            top: 0.25rem;
+            left: 0.25rem;
+            margin-left: 0;
+            transition: all 0.25s;
+        }
+    }
+
+    :global(.dark) theme-toggle::after {
+        margin-left: 1.25rem;
+    }
+</style>
+
+<script>
+    class ThemeToggle extends HTMLElement {
+        constructor() {
+            super();
+
+            if (this.theme === "dark") {
+                this.darkMode();
+            } else {
+                this.lightMode();
+            }
+
+            this.addEventListener("click", this.toggle);
+        }
+
+        theme =
+            localStorage.theme ||
+            (matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light");
+
+        darkMode() {
+            document.body.className = "dark";
+            localStorage.setItem("theme", "dark");
+            this.theme = "dark";
+        }
+
+        lightMode() {
+            document.body.className = "light";
+            localStorage.setItem("theme", "light");
+            this.theme = "light";
+        }
+
+        toggle() {
+            if (this.theme === "dark") {
+                this.lightMode();
+            } else {
+                this.darkMode();
+            }
+        }
+    }
+
+    customElements.define("theme-toggle", ThemeToggle);
+</script>

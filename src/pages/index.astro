@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import data from "../config.json";
+import * as index from "../index.md";
+import "../styles/post.scss";
+---
+
+<BaseLayout>
+	<main>
+		<h1>{data.title.toUpperCase()}</h1>
+		<hr />
+		<div class="links">
+			{data.links.map((link) => <a href={link.link}>{link.name}</a>)}
+		</div>
+		<hr />
+		<article set:html={index.compiledContent()} />
+	</main>
+</BaseLayout>
+
+<style lang="scss">
+	h1 {
+		text-align: center;
+		font-size: 3rem;
+	}
+
+	.links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		padding: 0.5rem;
+
+		& a {
+			text-decoration: none;
+		}
+	}
+
+	a {
+		color: var(--text);
+		transition: all 0.25s;
+
+		&:hover {
+			color: var(--link);
+		}
+	}
+</style>

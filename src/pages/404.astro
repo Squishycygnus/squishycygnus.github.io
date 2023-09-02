@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404" description="Page not found">
+    <h1>404 - Page not found</h1>
+    <a href="/">Return to homepage</a>
+</BaseLayout>
+
+<style lang="scss">
+    a {
+        color: var(--text);
+        text-decoration-color: var(--link);
+        text-decoration-thickness: 0.125rem;
+        text-underline-offset: 0.25rem;
+        transition: all 0.25s;
+
+        &:hover {
+            color: var(--link);
+        }
+    }
+</style>

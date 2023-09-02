@@ -1,0 +1,45 @@
+---
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import "../styles/colors.scss";
+import "../styles/style.scss";
+import "@fontsource-variable/roboto-mono/wght-italic.css";
+import "@fontsource-variable/roboto-mono";
+import data from "../config.json";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title = data.title, description = data.description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+    <Head title={title ?? `${title} | ${data.title}`} {description}>
+        <slot name="head" />
+    </Head>
+    <body class="light">
+        <Header />
+        <slot />
+        <Footer />
+        <style lang="scss">
+            body {
+                background-color: var(--bg);
+                color: var(--text);
+                height: 100dvh;
+                max-width: 48rem;
+                margin: auto;
+                transition: all 0.25s;
+                padding: 0 1.5rem;
+            }
+
+            html {
+                height: 100dvh;
+                font-family: ui-monospace, "Roboto Mono Variable", monospace;
+            }
+        </style>
+    </body>
+</html>

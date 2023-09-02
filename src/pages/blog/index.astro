@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const blogEntries = await getCollection("blog");
+---
+
+<BaseLayout title="Blog">
+    <main>
+        <ul>
+            {
+                blogEntries.map((entry) => (
+                    <li>
+                        <a href={`/blog/${entry.slug}`}>{entry.data.title}</a>
+                        <time datetime={entry.data.date.toISOString()}>
+                            {entry.data.date.toDateString()}
+                        </time>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</BaseLayout>
+
+<style lang="scss">
+    ul {
+        list-style-type: none;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        &::before {
+            content: "\bb";
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+        transition: all 0.25s;
+
+        &:hover {
+            color: var(--link);
+        }
+    }
+
+    time {
+        align-self: end;
+        font-style: italic;
+        font-size: 0.875rem;
+    }
+</style>

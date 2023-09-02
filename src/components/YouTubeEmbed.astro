@@ -1,0 +1,20 @@
+---
+interface Props {
+    url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<iframe
+    src={url.replace("youtube.com/watch?v=", "youtube-nocookie.com/embed/")}
+    allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+
+<style>
+    iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
+    }
+</style>

@@ -1,0 +1,239 @@
+---
+title: Basic Markdoc Style Guide
+description: ""
+date: 2023-08-28
+---
+
+Markdown is powered by [Markdoc](https://markdoc.dev). This is an example to demonstrate all the basic Markdown syntax. You can author content using the familiar Markdown syntax you already know.
+
+## Inline formatting
+
+Bold: **This text is bold**.
+
+Italics: _This text is italics_.
+
+Strikethrough: You can ~~strikethrough~~ text.
+
+Inline code: You can add code like this `const hello = "world"`.
+
+```md
+Bold: **This text is bold**.
+
+Italics: _This text is italics_.
+
+Strikethrough: You can ~~strikethrough~~ text.
+
+Inline code: You can add code like this `const hello = "world"`.
+```
+
+## Headings
+
+The following HTML `<h2>`—`<h6>` elements represent five levels of section headings. `<h1>` is also available but not recommended since the post title is already a `<h1>` element it is not a good practice to have more than one `<h1>` element in a page.
+
+## H2: Heading Two
+
+### H3: Heading 3
+
+#### H4: Heading Four
+
+##### H5: Heading Five
+
+###### H6: Heading Six
+
+```md
+## H2: Heading Two
+
+### H3: Heading 3
+
+#### H4: Heading Four
+
+##### H5: Heading Five
+
+###### H6: Heading Six
+```
+
+## Paragraph
+
+A standalone single paragraph of text.
+
+Paragraphs can be multiline too when they constitute words that make up more than one line, i.e they wrap to the next line. Wow! I am really smart to write two lines of text that makes zero sense.
+
+```md
+A standalone single paragraph of text.
+
+Paragraphs can be multiline too when they constitute words that make up more than one line, i.e they wrap to the next line. Wow! I am really smart to write two lines of text that makes zero sense.
+```
+
+## Blockquotes
+
+> This is a blockquote. And it's pretty long too. Long enough to wrap to next line. Surely it will wrap.
+
+> You can use other Markdown syntax like `inline code` within a blockquote.
+
+```
+> This is a blockquote. And it's pretty long too. Long enough to wrap to next line. Surely it will wrap.
+
+> You can use other Markdown syntax like `inline code` within a blockquote.
+```
+
+## Tables
+
+
+|  Italics  |   Bold   |  code  |
+| --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+
+```md
+|  Italics  |   Bold   |  code  |
+| --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+
+```
+
+## List types
+
+### Ordered list
+
+1. First item
+2. Second item
+3. Third item
+
+```md
+1. First item
+2. Second item
+3. Third item
+```
+
+### Unordered list
+
+- List item
+- Another item
+- And another item
+
+```md
+- List item
+- Another item
+- And another item
+```
+
+### Nested list
+
+- Fruit
+    - Apple
+    - Orange
+    - Banana
+- Dairy
+    - Milk
+    - Cheese
+
+```md
+- Fruit
+    - Apple
+    - Orange
+    - Banana
+- Dairy
+    - Milk
+    - Cheese
+```
+
+## Code blocks
+
+Syntax highlighting is done using [Shiki](https://github.com/shikijs/shiki). You can customise to whichever theme you want from the [plenty available Shiki themes](https://github.com/shikijs/shiki/blob/main/docs/themes.md).
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+```
+
+````md
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+```
+````
+
+## Images
+
+![A swan](../../assets/PXL_20221220_104453838.PORTRAIT.jpg)
+
+```md
+![A swan](../../assets/PXL_20221220_104453838.PORTRAIT.jpg)
+```
+
+## Horizontal rule
+
+Text before
+
+---
+
+Text after
+
+```md
+Text before
+
+---
+
+Text after
+```
+
+## YouTube video
+
+You can embed YouTube videos in your blog posts.
+
+{% youtube url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" /%}
+
+```md
+{% youtube url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" /%}
+```
+
+## HTML elements
+
+You can also use HTML elements directly.
+
+### sub
+
+H<sub>2</sub>O
+
+```html
+H<sub>2</sub>O
+```
+
+### sup
+
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+
+```html
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+```
+
+### kbd
+
+Press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd> to end the session.
+
+```html
+Press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd> to end the session.
+```
+
+### mark
+
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+```html
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+```

@@ -1,0 +1,22 @@
+body {
+    --link: rgb(51 154 240);
+    --code-bg: #121212;
+    --code-text: #dbd7caee;
+    --astro: hsl(22, 100%, 60%);
+    --noclaps: oklch(75% 0.25 60);
+    --mark-text: rgb(15 23 42);
+}
+
+body.light {
+    --bg: rgb(255 255 255);
+    --text: rgb(15 23 42);
+    --bright-text: rgb(0 0 0);
+    --table-border: rgb(100 116 139);
+}
+
+body.dark {
+    --bg: rgb(38 38 38);
+    --text: rgb(229 229 229);
+    --bright-text: rgb(255 255 255);
+    --table-border: rgb(212 212 212);
+}

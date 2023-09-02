@@ -1,0 +1,106 @@
+// Text and links
+a {
+    color: var(--text);
+    text-decoration-color: var(--link);
+    text-underline-offset: 0.25rem;
+    text-decoration-thickness: 0.125rem;
+    transition: all 0.25s;
+
+    &:hover {
+        color: var(--link);
+    }
+}
+
+p {
+    line-height: 2rem;
+    margin: 1.25rem 0;
+}
+
+// Code
+.astro-code {
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+code {
+    font-family: ui-monospace, "Roboto Mono", monospace;
+}
+
+code:not(.astro-code code) {
+    color: var(--code-text);
+    background-color: var(--code-bg);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+// Blockquotes
+blockquote {
+    font-style: italic;
+    position: relative;
+    margin: 2rem 0.5rem;
+    padding: 0.5rem 1.5rem;
+
+    &::before {
+        content: "\201c";
+        font-size: 4rem;
+        position: absolute;
+        color: var(--link);
+        left: -0.5rem;
+        top: -0.5rem;
+        font-family: ui-sans-serif, Arial, sans-serif;
+    }
+}
+
+// Tables
+table {
+    width: 100%;
+    margin: 2rem 0;
+    border-spacing: 0;
+    font-size: 0.875rem;
+}
+
+th {
+    text-align: left;
+}
+
+th,
+td {
+    line-height: 2.5rem;
+}
+
+th {
+    border-bottom: solid 0.1rem var(--table-border);
+}
+
+// Lists
+li {
+    line-height: 2rem;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+// Images
+img {
+    width: 100%;
+    object-fit: contain;
+    height: min-content;
+}
+
+// Other elements
+
+abbr {
+    text-decoration: dotted;
+}
+
+kbd {
+    font-size: 1rem;
+}
+
+mark {
+    color: var(--mark-text);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}

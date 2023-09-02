@@ -1,0 +1,41 @@
+<nav>
+    <a data-active={Astro.url.pathname.split("/")[1] === ""} href="/">Home</a>
+    <a data-active={Astro.url.pathname.split("/")[1] === "blog"} href="/blog"
+        >Blog</a
+    >
+    <a href="/rss.xml">RSS</a>
+</nav>
+
+<style lang="scss">
+    nav {
+        display: flex;
+        gap: 1rem;
+    }
+
+    a {
+        color: var(--bright-text);
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.25rem;
+            left: 0;
+            right: 0;
+            background-color: var(--link);
+            height: 0.125rem;
+            transform: scaleX(0);
+            transition: all 0.25s;
+            transform-origin: left;
+        }
+
+        &:hover::after {
+            transform: scaleX(100%);
+        }
+    }
+
+    a[data-active]::after {
+        transform: scaleX(100%);
+    }
+</style>
